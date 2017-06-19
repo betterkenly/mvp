@@ -1,12 +1,13 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/fetcher');
+var db = m
 
 
 
 var zipCodeSchema = mongoose.Schema({
-  // TODO: your schema here!
-  id: {type: Number, unqiue: true},
-  zip: {type: String, unqiue: true}
+
+  zip: {type: String, unqiue: true},
+  city: {type: String}
 
 });
 
