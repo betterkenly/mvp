@@ -2,8 +2,9 @@ import React from 'react';
 
 const WeatherDetailList = (props) => (
   <div>
-    <h4> weather detail of zip code search </h4>
-    There are {props.weatherDetail.length}
+    <h4> The Current Weather of {props.weatherDetail.name}: </h4>
+    <h3></h3>
+    
   </div>
 )
 

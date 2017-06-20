@@ -26,7 +26,7 @@ class App extends React.Component {
       type: 'json',
       data: { zipCode: zipCode },
       success: (data) => {
-        this.setTheState(data);
+        this.setTheState(JSON.parse(data));
       },
       error: (err) => {
         console.log('unable to send POST request');
@@ -38,8 +38,8 @@ class App extends React.Component {
   render () {
     return (<div>
       <h1>Weather Information</h1>
-      <WeatherDetailList weatherDetail={this.state.weatherDetail} />
       <Search onSearch={this.search.bind(this)}/>
+      <WeatherDetailList weatherDetail={this.state.weatherDetail} />
     </div>)
   }
 }

@@ -27,22 +27,23 @@ app.get('/search', function (req, res) {
   }; 
 
   rp(options)
-  //     .then((data) => {
-  //   console.log(data);
-  //   console.log(date);
-  //   console.log('this is the city name :',JSON.parse(data).name);
+      .then((data) => {
+    // console.log(data);
+    // console.log(date);
+    // console.log('this is the city name :',JSON.parse(data).name);
   
-  //   console.log(city);
-  //   var newSearch = new zipCode({zip: zipCode, city: city, date: date });
-  //   newSearch.save();
-  //   return data;
-  // })
-    .then( 
-    // (data) => {res.send(data);}
-    (data) => {
-      res.send(data);
-    }
-    )
+    // console.log(city);
+    let newSearch = new zipCode({zip: zipCode, city: city, date: date });
+    newSearch.save();
+    console.log('this is the db save::::', newSearch);
+    // res.send(data);
+  })
+    // .then( 
+    // // (data) => {res.send(data);}
+    // (data) => {
+    //   res.send(data);
+    // }
+    // )
   .catch((err) => {
     console.log('ERROR TO SEND DATA FROM SERVER');
   })
