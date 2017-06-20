@@ -65,6 +65,15 @@ app.get('/search/history', function (req, res) {
 
 });
 
+app.post('/deletehist', function(req, res){
+  db.collection.drop( (err) => {
+      console.log(err);
+  });
+    res.send('data base is clean');
+
+  // console.log('got it from client');
+});
+
 var port = 1128;
 
 app.listen(port, function() {

@@ -27,6 +27,22 @@ class App extends React.Component {
     console.log('this is the hist', this.state.history);
   }
 
+  deleteHist () {
+    // this.setState({history: null});
+    $.ajax({
+      method: 'post',
+      url: '/deletehist',
+      type: 'json',
+      data: { data: 'please'},
+      success: (data) => {
+        alert(data);
+      },
+      error: () => {
+        console.log('fail to clean');
+      }
+    });
+  }
+
   search (zipCode) {
     console.log(`${zipCode} was searched`);
     // this.state.history.push(zipCode);
@@ -71,6 +87,7 @@ class App extends React.Component {
   render () {
     return (<div>
       <h1>Weather Information</h1>
+      <button onClick={this.deleteHist.bind(this)}>Delete History</button>
       <Search onSearch={this.search.bind(this)}/>
       <WeatherDetailList weatherDetail={this.state.weatherDetail} />
       <HistoryList getHistory={this.getHistory.bind(this)} history={this.state.history}/>
