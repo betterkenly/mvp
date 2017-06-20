@@ -9,8 +9,8 @@ db.once('open', () => {
 
 var zipCodeSchema = mongoose.Schema({
 
-  zip: {type: String, unqiue: true},
-  city: {type: String, unqiue: true},
+  zip: {type: String},
+  city: {type: String},
   date: {type: String}
 
 });

@@ -8,14 +8,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      name: '',
-      zipCode: '',
+      history: [],
       weatherDetail: ''
     }
 
   }
   setTheState (obj) {
     this.setState({weatherDetail: obj });
+  }
+
+  setHistory (hist) {
+    this.setState({history: hist});
   }
 
   search (zipCode) {
@@ -27,12 +30,30 @@ class App extends React.Component {
       data: { zipCode: zipCode },
       success: (data) => {
         this.setTheState(JSON.parse(data));
+        // console.log(typeof JSON.parse(data));
+   
       },
       error: (err) => {
         console.log('unable to send POST request');
         console.log(err);
       } 
     });
+  }
+
+  getHistory () {
+    $.ajax({
+      method:'GET',
+      url:'/search/history',
+      type: 'json',
+      data: {test: 'test, can you see me?'},
+      success (data) => {
+        setHistory(JSON.parse(data));
+      },
+      error: (err) => {
+        console.log('can not get history');
+        console.log(err);
+      }
+    })
   }
 
   render () {
