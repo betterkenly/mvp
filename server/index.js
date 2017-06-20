@@ -18,7 +18,8 @@ app.get('/search', function (req, res) {
   let zip = req.url.substring(16);
   let API_KEY ='6f1c99a92673f7130b73fc9b65c0b1fa';
   let options = {
-   url: `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=13e4be1c35dec84037ee448fa03d17e3`,
+  //  url: `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=13e4be1c35dec84037ee448fa03d17e3`,
+   url: `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=6f1c99a92673f7130b73fc9b65c0b1fa`,
 
     headers: {
       'user-agent': 'Cartman Luk'
