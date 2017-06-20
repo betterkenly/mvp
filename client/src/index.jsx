@@ -24,7 +24,7 @@ class App extends React.Component {
 
   search (zipCode) {
     console.log(`${zipCode} was searched`);
-    this.state.history.push(zipCode);
+    // this.state.history.push(zipCode);
     $.ajax({
       method: 'GET',
       url: '/search',
@@ -50,7 +50,7 @@ class App extends React.Component {
       data: {test: 'test, can you see me?'},
       success: (data) => {
         // this.setHistory(JSON.parse(data));
-        console.log(data);
+        console.log('hiii');
       },
       error: (err) => {
         console.log('can not get history');
