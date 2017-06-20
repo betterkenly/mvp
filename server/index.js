@@ -27,23 +27,43 @@ app.get('/search', function (req, res) {
     }
   }; 
 
- 
+//  rp(options, function(err, data){
+//    if(err) {
+//      throw err;
+//    } else {
+//      data.body = JSON.parse(data.body);
+//      console.log('data.body.name: ', data.body.name);
+//     city = data.body.name;
+//     console.log('this is the ',zipCode);
+//     var newSearch = new db({
+//       zip : zipCode,
+//       city: data.body.name,
+//       date: date
+//     });
+//      newSearch.save((err) => {
+//       if(err) {
+//         console.log(err);
+//       } else{
+//         res.send(JSON.stringify(data.body.name));
+//       }
+//     });
+    
+//    }
+//  })
 
 
   rp(options)
       .then((data) => {
-    // console.log(data);
-    // console.log(date);
-    // console.log('this is the city name :',JSON.parse(data).name);
-  
-    // console.log(city);
+
     var newSearch = new db({
       zip : zipCode,
       city: data.name,
       date: date
     });
 
-    newSearch.save();
+    newSearch.save((err) => {
+      console.log(err);
+    });
     console.log('this is the db save::::', newSearch);
     return data;
 
@@ -56,7 +76,10 @@ app.get('/search', function (req, res) {
 });
 
 app.get('/search/history', function (req, res) {
-  console.log(req.body.test);
+  var history = db.find();
+  console.log(history);
+  res.send(history);
+ 
 });
 
 var port = 1128;
