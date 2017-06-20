@@ -19,14 +19,22 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+  Simple weather app. 
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+  for those people who enjoy outdoor activity 
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  this app allow client to get the most update simple weather data by entering US zip code. it also shows previous searching history. if history information is piled up, client can click to clean up the database. 
+
 ## Problem ##
   > Describe the problem your product solves.
+
+  
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.

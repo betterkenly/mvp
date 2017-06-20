@@ -35,6 +35,7 @@ class App extends React.Component {
       type: 'json',
       data: { data: 'please'},
       success: (data) => {
+        this.setState({history: []});
         alert(data);
       },
       error: () => {
