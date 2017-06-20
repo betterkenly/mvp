@@ -87,7 +87,7 @@ class App extends React.Component {
   render () {
     return (<div>
       <h1>Weather Information</h1>
-      <button onClick={this.deleteHist.bind(this)}>Delete History</button>
+      <button onClick={this.deleteHist.bind(this)}>Clean Up Data Base</button>
       <Search onSearch={this.search.bind(this)}/>
       <WeatherDetailList weatherDetail={this.state.weatherDetail} />
       <HistoryList getHistory={this.getHistory.bind(this)} history={this.state.history}/>
