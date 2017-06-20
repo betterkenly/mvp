@@ -10,23 +10,27 @@ class App extends React.Component {
     this.state = { 
       name: '',
       zipCode: '',
-      weatherDetail: []
+      weatherDetail: ''
     }
 
+  }
+  setTheState (obj) {
+    this.setState({weatherDetail: obj });
   }
 
   search (zipCode) {
     console.log(`${zipCode} was searched`);
     $.ajax({
-      method: 'POST',
+      method: 'GET',
       url: '/search',
       type: 'json',
       data: { zipCode: zipCode },
       success: (data) => {
-        console.log(data);
+        this.setTheState(data);
       },
-      error: () => {
-        console.log('unable to send GET request')
+      error: (err) => {
+        console.log('unable to send POST request');
+        console.log(err);
       } 
     });
   }
