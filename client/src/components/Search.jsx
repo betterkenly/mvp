@@ -21,7 +21,7 @@ class Search extends React.Component {
   render() {
     return (<div>
       <h4></h4>
-      Please enter a zipCode for weather forecast: <input value={this.state.zipCode} onChange={this.onChange.bind(this)}/>       
+      Please enter zip code for current weather: <input value={this.state.zipCode} onChange={this.onChange.bind(this)}/>       
       <button onClick={this.search.bind(this)}> Submit </button>
     </div>) 
   }

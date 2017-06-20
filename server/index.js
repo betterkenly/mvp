@@ -14,12 +14,10 @@ app.use(bodyParser.json());
 
 app.get('/search', function (req, res) {
 
-  // let city = '';
   let date = new Date();
   let zip = req.url.substring(16);
   let API_KEY ='6f1c99a92673f7130b73fc9b65c0b1fa';
   let options = {
-    // url: `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=6f1c99a92673f7130b73fc9b65c0b1fa`,
    url: `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=13e4be1c35dec84037ee448fa03d17e3`,
 
     headers: {
@@ -48,61 +46,23 @@ app.get('/search', function (req, res) {
      console.log('data.body.name: ', data.body.name);
     city = data.body.name;
     console.log('this is the ',zip);
-    // var newSearch = new db({
-    //   zip : zipCode,
-    //   city: data.body.name,
-    //   date: date
-    // });
-    // newSearch.save();
-    //  newSearch.save((err) => {
-    //   if(err) {
-    //     console.log(err);
-    //   } else{
+
         res.send(JSON.stringify(data.body));
-    // var newSearch = new db({
-    //   zip : zipCode,
-    //   date: date
-    // });
-    // newSearch.save((err) => {
-    //   if(err) {
-    //     console.log(err);
-    //   }
-    // });
-    //   }
-    // });
+
     
    }
 
-
-
-  // rp(options)
-  //     .then((data) => {
-
-  //   var newSearch = new db({
-  //     zip : zipCode,
-  //     city: data.name,
-  //     date: date
-  //   });
-
-  //   db.create(newSearch);
-  //   console.log('this is the db save::::', newSearch);
-  //   return data;
-
-
   })
-  // .then( (data) => {res.send(data);})
-  // .catch((err) => {
-  //   console.log('ERROR TO SEND DATA FROM SERVER');
-  // })
-
 
 });
 
 app.get('/search/history', function (req, res) {
-  var history = db.zipcodes.find();
-  console.log(history);
-  res.send(history);
- 
+
+    db.find()
+    .then( (data) => {
+      res.send(JSON.stringify(data));
+    });
+
 });
 
 var port = 1128;

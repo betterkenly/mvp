@@ -20,6 +20,7 @@ class App extends React.Component {
 
   setHistory (hist) {
     this.setState({history: hist});
+    console.log('this is the hist', this.state.history);
   }
 
   search (zipCode) {
@@ -31,7 +32,7 @@ class App extends React.Component {
       type: 'json',
       data: { zipCode: zipCode },
       success: (data) => {
-        this.setTheState(data);
+        this.setTheState(JSON.parse(data));
         // console.log(typeof JSON.parse(data));
    
       },
@@ -42,22 +43,25 @@ class App extends React.Component {
     });
   }
 
-  getHistory () {
+  getHistory (e) {
+    e.preventDefault();
     $.ajax({
       method:'GET',
       url:'/search/history',
       type: 'json',
       data: {test: 'test, can you see me?'},
       success: (data) => {
-        // this.setHistory(JSON.parse(data));
-        console.log('hiii');
+        console.log('getHist: ', data);
+        this.setHistory(JSON.parse(data));
+        // console.log('hiii');
+        // console.log(data);
       },
       error: (err) => {
         console.log('can not get history');
         console.log(err);
       }
     })
-    console.log(this.state.history);
+    // console.log(this.state.history);
   }
 
   render () {
