@@ -19,7 +19,7 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
-  Simple weather app. 
+  EZ Weather app. 
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
@@ -34,19 +34,27 @@ Once the project moves into development, the press release can be used as a touc
 ## Problem ##
   > Describe the problem your product solves.
 
-  
+  for those people how travel a lot. if you love snowboarding, you can have a quick check of the climate before going up the hill. if you have skin problem, it tells you the humidity.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
+  one click, 5 digit zip code number, tell you all the basic weather data.
+
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+  Simple, Easy, Quick.
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  visit the app , enter zip code and CLICK! EZ!
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+
+  ZipCode & a click!
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
