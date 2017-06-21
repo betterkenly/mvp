@@ -87,7 +87,7 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>Weather Information</h1>
+      <h1>United States Weather Information</h1>
       <button onClick={this.deleteHist.bind(this)}>Clean Up Data Base</button>
       <Search onSearch={this.search.bind(this)}/>
       <WeatherDetailList weatherDetail={this.state.weatherDetail} />
